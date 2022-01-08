@@ -1,6 +1,4 @@
 from random import randint
-import random
-from numpy.typing import _128Bit
 import pygame
 import sys
 import numpy
