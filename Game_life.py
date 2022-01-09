@@ -8,10 +8,9 @@ class Game:
     width = height = 800
     size = 79
     black = (0, 0, 0)
+    white = (255, 255, 255)
     
     first_generation = []
-    #x = y = 10
-    #first_generation = [(x + 1, y), (x + 2, y + 1), (x, y + 2), (x + 1, y + 2), (x + 2, y + 2)]
     first_generation = []
     
     start = True
@@ -28,10 +27,6 @@ class Game:
         self._clock = pygame.time.Clock()
         
         self._matrix = numpy.zeros((80, 80), dtype=int)
-        
-        # for y in range(0, 40, 2):
-        #     for x in range(0, 60):
-        #         self._matrix[y][x] = 1
         
     def draw(self):
         sz = 10
@@ -56,7 +51,6 @@ class Game:
         return neighbours
     
     def createFutureGeneration(self):
-        number = 0
         future_generation = []
 
         for y in range(self.size):
@@ -68,8 +62,6 @@ class Game:
                 else:
                     future_generation.append((y, x, 0))
                     
-                number += 1
-                
         return future_generation
     
     def move(self):
