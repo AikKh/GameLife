@@ -38,12 +38,12 @@ class Game:
                 
     def cheakArround(self, x: int, y: int):
         neighbours = 0
-        cors = [{'y': y - 1, 'x': x}, {'y': y - 1, 'x': x + 1}, {'y': y, 'x': x + 1}, {'y': y + 1, 'x': x + 1}, 
-                {'y': y + 1, 'x': x}, {'y': y + 1, 'x': x - 1}, {'y': y, 'x': x - 1}, {'y': y - 1, 'x': x - 1}]
+        cors = [[y - 1, x], [y - 1, x + 1], [y, x + 1], [y + 1, x + 1], 
+                [ y + 1, x], [y + 1, x - 1], [y, x - 1], [y - 1, x - 1]]
         
         for cor in cors:
             try:
-                if self._matrix[cor['y']][cor['x']]:
+                if self._matrix[cor[0]][cor[1]]:
                     neighbours += 1
             except IndexError:
                 pass
